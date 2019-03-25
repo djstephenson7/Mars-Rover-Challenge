@@ -1,0 +1,31 @@
+{
+  "name": "Mars-Rover-Challenge",
+  "version": "1.0.0",
+  "description": "## Gameplan",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djstephenson7/Mars-Rover-Challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djstephenson7/Mars-Rover-Challenge/issues"
+  },
+  "homepage": "https://github.com/djstephenson7/Mars-Rover-Challenge#readme"
+}
