@@ -12,18 +12,22 @@ function moveRover(rover, directionString) {
   } else if (directionString === 'R') {
     rover.direction = moves[direction].R;
     console.log(direction);
+  } else if (directionString === 'M') {
+    rover = moves[direction].move(rover.x, rover.y);
+    console.log(direction);
+    console.log(rover);
   }
 
 
   // 1. Take the string full of letters and break it down.
   // 2. Check each letter against the position of the Rover. E.g. what effect will
   // 'L' have on a Rover facing East?
-  console.log(`Rover facing ${rover.direction}`);
-  return rover.direction;
+  console.log(`Rover status: ${rover.direction}, ${rover.x}, ${rover.y}`);
+  return rover.x, rover.y, rover.direction;
 }
 
 // moveRover(roverOne, 'L')
-moveRover(roverOne, 'R');
+moveRover(roverOne, 'M');
 
 function directionHandler() {
   // 1. Case: when facing North
