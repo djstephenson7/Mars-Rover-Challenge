@@ -1,21 +1,30 @@
 const Rover = require('./rover');
+const moves = require('./moves');
 
 const roverOne = new Rover(1, 2, 'N');
 const roverTwo = new Rover(3, 3, 'E');
 
 function moveRover(rover, directionString) {
-  if (rover.direction === 'N' && directionString === 'L') {
-    rover.direction = 'W'
+  const direction = rover.direction;
+  if (directionString === 'L') {
+    rover.direction = moves[direction]['L']
+    console.log(direction);
   }
+  else if (directionString === 'R') {
+    rover.direction = moves[direction]['R']
+    console.log(direction);
+  }
+
+
   // 1. Take the string full of letters and break it down.
   // 2. Check each letter against the position of the Rover. E.g. what effect will
   // 'L' have on a Rover facing East?
-  console.log(directionString);
   console.log(`Rover facing ${rover.direction}`);
   return rover.direction;
 }
 
-moveRover(roverOne, 'L')
+// moveRover(roverOne, 'L')
+moveRover(roverOne, 'R')
 
 function directionHandler() {
   // 1. Case: when facing North
