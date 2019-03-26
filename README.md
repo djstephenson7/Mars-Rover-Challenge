@@ -17,8 +17,6 @@ Create commands:
   R: turn 90 degrees right.
   M: Move forward 1 space.
 
-
-
 There should be two rovers.
   Rover 1: position 1, 2 and facing North. Receives 'LMLMLMLMM' commands.
     Expected output: 1,3 N
