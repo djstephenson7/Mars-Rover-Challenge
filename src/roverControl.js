@@ -7,11 +7,10 @@ const roverTwo = new Rover(3, 3, 'E');
 function moveRover(rover, directionString) {
   const direction = rover.direction;
   if (directionString === 'L') {
-    rover.direction = moves[direction]['L']
+    rover.direction = moves[direction].L;
     console.log(direction);
-  }
-  else if (directionString === 'R') {
-    rover.direction = moves[direction]['R']
+  } else if (directionString === 'R') {
+    rover.direction = moves[direction].R;
     console.log(direction);
   }
 
@@ -24,7 +23,7 @@ function moveRover(rover, directionString) {
 }
 
 // moveRover(roverOne, 'L')
-moveRover(roverOne, 'R')
+moveRover(roverOne, 'R');
 
 function directionHandler() {
   // 1. Case: when facing North
