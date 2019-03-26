@@ -1,16 +1,21 @@
 const Rover = require('./rover');
 
 const roverOne = new Rover(1, 2, 'N');
+const roverTwo = new Rover(3, 3, 'E');
 
-
-function moveRover(roverOne, directionString) {
+function moveRover(rover, directionString) {
+  if (rover.direction === 'N' && directionString === 'L') {
+    rover.direction = 'W'
+  }
   // 1. Take the string full of letters and break it down.
   // 2. Check each letter against the position of the Rover. E.g. what effect will
   // 'L' have on a Rover facing East?
   console.log(directionString);
-  console.log(`Rover facing ${roverOne.direction}`);
+  console.log(`Rover facing ${rover.direction}`);
+  return rover.direction;
 }
 
+moveRover(roverOne, 'L')
 
 function directionHandler() {
   // 1. Case: when facing North
@@ -34,3 +39,5 @@ function terrainHandler() {
   // 1. if latitude & longitude are < 0 or > 5, throw 'out of bounds' error
   // 2. If x, y coordinates are equal to another rover's, throw 'Collision' error
 }
+
+module.exports = moveRover;
