@@ -2,8 +2,6 @@ const Rover = require('./rover');
 const moves = require('./moves');
 const terrainHandler = require('./terrainHandler');
 
-
-
 function moveRover(rover, directionString) {
   const commands = directionString.split('');
   for (let i = 0; i < commands.length; i++) {
@@ -18,7 +16,7 @@ function moveRover(rover, directionString) {
       rover.direction = moves[direction].NONE;
     }
   }
-  console.log(`Rover status: ${rover.x}, ${rover.y}, ${rover.direction}`);
+  console.log(`${rover.x} ${rover.y} ${rover.direction}`);
   return rover;
 }
 
