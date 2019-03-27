@@ -6,10 +6,7 @@ const roverTwo = new Rover(3, 3, 'E');
 
 function moveRover(rover, directionString) {
   const commands = directionString.split('');
-
   for (let i = 0; i < commands.length; i++) {
-    commands[i];
-
     const direction = rover.direction;
     if (commands[i] === 'L') {
       rover.direction = moves[direction].L;
@@ -24,15 +21,7 @@ function moveRover(rover, directionString) {
   return rover;
 }
 
-function directionHandler(commands) {
-  return commands.split('');
-}
-
-moveRover(roverOne, 'LMLMLM');
-
-function terrainHandler() {
-  // 1. if latitude & longitude are < 0 or > 5, throw 'out of bounds' error
-  // 2. If x, y coordinates are equal to another rover's, throw 'Collision' error
-}
+moveRover(roverOne, 'LMLMLMLMM');
+moveRover(roverTwo, 'MMRMMRMRRM');
 
 module.exports = moveRover;
