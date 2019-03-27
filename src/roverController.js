@@ -1,8 +1,8 @@
 const Rover = require('./rover');
 const moves = require('./moves');
+const terrainHandler = require('./terrainHandler');
 
-const roverOne = new Rover(1, 2, 'N');
-const roverTwo = new Rover(3, 3, 'E');
+
 
 function moveRover(rover, directionString) {
   const commands = directionString.split('');
@@ -14,27 +14,12 @@ function moveRover(rover, directionString) {
       rover.direction = moves[direction].R;
     } else if (commands[i] === 'M') {
       rover = moves[direction].move(rover.x, rover.y);
-      console.log(rover.y);
-      if (rover.x < 0 || rover.x > 5 || rover.y > 5 || rover.y < 0) {
-        throw new Error('Out of bounds!')
-      }
+      terrainHandler(rover);
       rover.direction = moves[direction].NONE;
     }
   }
   console.log(`Rover status: ${rover.x}, ${rover.y}, ${rover.direction}`);
   return rover;
 }
-
-function terrainHandler(rover) {
-  if (
-    rover.x > 5 || rover.x < 0 ||
-    rover.y > 5 || rover.y < 0
-    ) {
-    throw new Error('Out of bounds!')
-  }
-}
-
-moveRover(roverOne, 'MMMM');
-moveRover(roverTwo, 'MMRMMRMRRM');
 
 module.exports = moveRover;

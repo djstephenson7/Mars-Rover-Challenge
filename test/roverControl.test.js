@@ -1,4 +1,4 @@
-const moveRover = require('../src/roverControl');
+const moveRover = require('../src/roverController');
 const Rover = require('../src/rover');
 
 const roverOne = new Rover(1, 2, 'N');
@@ -25,6 +25,6 @@ test('Rover Two takes the test input and retrns the correct position', () => {
 });
 
 test('Throws an error if the rover moves off the grid', () => {
-  expect(moveRover(roverOne, 'LMMM')).toThrowError(new Error('Out of bounds!'))
-  expect(moveRover(roverOne, 'MMMM')).toThrowError(new Error('Out of bounds!'))
+  expect(() => moveRover(roverOne, 'LMMM')).toThrowError(new Error('Out of bounds!'));
+  expect(() => moveRover(roverOne, 'MMMM')).toThrowError(new Error('Out of bounds!'));
 });
