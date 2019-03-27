@@ -14,8 +14,7 @@ function moveRover(rover, directionString) {
     rover.direction = moves[direction].R;
   } else if (directionString === 'M') {
     rover = moves[direction].move(rover.x, rover.y);
-    console.log(direction);
-    console.log(rover);
+    rover.direction = moves[direction].NONE;
   }
 
   console.log(`Rover status: ${rover.direction}, ${rover.x}, ${rover.y}`);
@@ -26,9 +25,9 @@ function directionHandler(commands) {
   return commands.split('');
 }
 
-directionHandler('LMLMLMLMM')
+directionHandler('LMLMLMLMM');
 
-moveRover(roverOne, 'LMLMLMLMM')
+moveRover(roverOne, 'M');
 // moveRover(roverOne, 'M');
 
 
