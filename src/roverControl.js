@@ -14,6 +14,10 @@ function moveRover(rover, directionString) {
       rover.direction = moves[direction].R;
     } else if (commands[i] === 'M') {
       rover = moves[direction].move(rover.x, rover.y);
+      console.log(rover.y);
+      if (rover.x < 0 || rover.x > 5 || rover.y > 5 || rover.y < 0) {
+        throw new Error('Out of bounds!')
+      }
       rover.direction = moves[direction].NONE;
     }
   }
@@ -21,7 +25,16 @@ function moveRover(rover, directionString) {
   return rover;
 }
 
-moveRover(roverOne, 'LMLMLMLMM');
+function terrainHandler(rover) {
+  if (
+    rover.x > 5 || rover.x < 0 ||
+    rover.y > 5 || rover.y < 0
+    ) {
+    throw new Error('Out of bounds!')
+  }
+}
+
+moveRover(roverOne, 'MMMM');
 moveRover(roverTwo, 'MMRMMRMRRM');
 
 module.exports = moveRover;

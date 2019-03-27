@@ -20,6 +20,11 @@ test('Rover One takes the test input and retrns the correct position', () => {
   expect(moveRover(roverOne, 'LMLMLMLMM')).toEqual({ direction: 'N', x: 1, y: 3 });
 });
 
-test('Rover One takes the test input and retrns the correct position', () => {
+test('Rover Two takes the test input and retrns the correct position', () => {
   expect(moveRover(roverTwo, 'MMRMMRMRRM')).toEqual({ direction: 'E', x: 5, y: 1 });
+});
+
+test('Throws an error if the rover moves off the grid', () => {
+  expect(moveRover(roverOne, 'LMMM')).toThrowError(new Error('Out of bounds!'))
+  expect(moveRover(roverOne, 'MMMM')).toThrowError(new Error('Out of bounds!'))
 });
